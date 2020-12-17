@@ -1,0 +1,34 @@
+{
+    "name": "anax/weatherservice",
+    "type": "library",
+    "description": "Anax weather module.",
+    "keywords": ["weather", "kmom04", "education"],
+    "homepage": "http://www.student.bth.se/~krmr18/dbwebb-kurser/ramverk1/me/redovisa/htdocs/",
+    "license": "MIT",
+    "authors": [{
+        "name": "Kristoffer Markow",
+        "email": "kristoffer@markow.se",
+        "homepage": "http://www.student.bth.se/~krmr18/dbwebb-kurser/ramverk1/me/redovisa/htdocs/",
+        "role": "Developer"
+    }],
+    "support": {
+        "issues": "https://github.com/canax/remserver/issues"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anax\\": "src/",
+            "Kris3XIQ\\": "src/"
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.4",
+        "anax/commons": "^2.0.14"
+    },
+    "require-dev": {
+        "phpmetrics/phpmetrics": "^2",
+        "phpunit/phpunit": "^7",
+        "anax/anax": "^2.0.17"
+    }
+}
