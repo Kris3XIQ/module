@@ -40,7 +40,7 @@ class KrisWeatherControllerTest extends TestCase
     public function testIndexAction()
     {
         $controller = new KrisWeatherController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $res = $controller->indexAction();
@@ -54,7 +54,7 @@ class KrisWeatherControllerTest extends TestCase
     public function testRedirectPost()
     {
         $controller = new KrisWeatherController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $res = $controller->indexActionPost();
@@ -69,7 +69,7 @@ class KrisWeatherControllerTest extends TestCase
     public function testWeatherCorrectLocationInput()
     {
         $controller = new KrisWeatherController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "Stockholm,SE");
@@ -84,7 +84,7 @@ class KrisWeatherControllerTest extends TestCase
     public function testWeatherCorrectIpInput()
     {
         $controller = new KrisWeatherController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "194.47.150.2");
@@ -99,7 +99,7 @@ class KrisWeatherControllerTest extends TestCase
     public function testWeatherIncorrectLocationInput()
     {
         $controller = new KrisWeatherController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "Someplace that doesnt exist");
@@ -113,7 +113,7 @@ class KrisWeatherControllerTest extends TestCase
     public function testWeatherHistoryJSON()
     {
         $controller = new KrisWeatherController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $_SESSION["weatherHistoryJSON"] = [
