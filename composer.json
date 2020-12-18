@@ -21,7 +21,6 @@
         }
     },
     "minimum-stability": "beta",
-    "prefer-stable": true,
     "require": {
         "php": ">=7.4",
         "anax/di": "^2.0.3",
