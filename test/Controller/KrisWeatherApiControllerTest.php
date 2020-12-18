@@ -24,21 +24,14 @@ class KrisWeatherApiControllerTest extends TestCase
         global $di;
 
         // Setup di
-        // $this->di = new DIFactoryConfig();
-        // $this->di = $di;
-        // $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
         $di = new DIFactoryConfig();
-        // $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
         $di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
 
         // Use a different cache dir for unit test
         $di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache/anax");
 
+        // Set DI
         $this->di = $di;
-        // Controller setup
-        // $this->controller = new KrisWeatherApiController();
-        // $this->service = $this->di->get("api-service");
-        // $this->controller->setDI($this->di);
     }
 
     /**
@@ -47,15 +40,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testIndexAction()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $res = $controller->indexAction();
         $body = $res->getBody();
         $this->assertStringContainsString("Weather API service", $body);
-        // $res = $this->controller->indexAction();
-        // $body = $res->getBody();
-        // $this->assertStringContainsString("Weather API service", $body);
     }
 
     /**
@@ -64,15 +54,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testRedirectPost()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setBody(json_decode(json_encode('{"x":""}')), true);
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -83,15 +70,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiCorrectLocationInput()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "Stockholm,SE");
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", "Stockholm,SE");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -102,15 +86,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiCorrectIpInput()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "194.47.150.2");
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", "194.47.150.2");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -121,15 +102,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiIncorrectLocationInput()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "Does not exist");
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", "Does not exist");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -140,15 +118,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiIncorrectIpInput()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "412413123");
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", "412413123");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -159,17 +134,13 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiInorrectInput()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", "");
         $this->di->get("request")->setBody(json_decode(json_encode('{"input":""}')), true);
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", "");
-        // $this->di->get("request")->setBody(json_decode(json_encode('{"input":""}')), true);
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -180,17 +151,13 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiInorrectInputThirdParty()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", null);
         $this->di->get("request")->setBody(json_decode(json_encode('{"input":"194.47.150.2"}')), true);
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", null);
-        // $this->di->get("request")->setBody(json_decode(json_encode('{"input":"194.47.150.2"}')), true);
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 
     /**
@@ -201,16 +168,12 @@ class KrisWeatherApiControllerTest extends TestCase
     public function testWeatherApiInorrectJSONThirdParty()
     {
         $controller = new KrisWeatherApiController();
-        $service = $this->di->get("api-service");
+        $this->di->get("api-service");
         $controller->setDI($this->di);
 
         $this->di->get("request")->setPost("input", false);
         $this->di->get("request")->setBody(json_decode(json_encode('{"input:"194.47.150.2"}')), true);
         $res = $controller->indexActionPost();
         $this->assertIsArray($res);
-        // $this->di->get("request")->setPost("input", false);
-        // $this->di->get("request")->setBody(json_decode(json_encode('{"input:"194.47.150.2"}')), true);
-        // $res = $this->controller->indexActionPost();
-        // $this->assertIsArray($res);
     }
 }

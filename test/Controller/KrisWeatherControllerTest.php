@@ -24,29 +24,14 @@ class KrisWeatherControllerTest extends TestCase
         global $di;
 
         // Setup di
-        // $this->di = new DIFactoryConfig();
-        // $this->di->loadServices(ANAX_INSTALL_PATH . "/config/di");
-        // $this->di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
-        // $this->di = $di;
-        // $di = new DIMagic();
-        // var_dump($di);
-        // $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
-        // $di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
-        // $di = $this->di;
-        // var_dump($di);
         $di = new DIFactoryConfig();
-        // $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
         $di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
 
         // Use a different cache dir for unit test
         $di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache");
 
+        // Set DI
         $this->di = $di;
-        // Controller setup
-        // $_SESSION["weatherHistoryJSON"] = null;
-        // $this->controller = new KrisWeatherController();
-        // $this->service = $di->get("api-service");
-        // $this->controller->setDI($this->di);
     }
 
     /**
@@ -61,9 +46,6 @@ class KrisWeatherControllerTest extends TestCase
         $res = $controller->indexAction();
         $body = $res->getBody();
         $this->assertStringContainsString("Weather service", $body);
-        // $res = $this->controller->indexAction();
-        // $body = $res->getBody();
-        // $this->assertStringContainsString("Weather service", $body);
     }
 
     /**
@@ -78,9 +60,6 @@ class KrisWeatherControllerTest extends TestCase
         $res = $controller->indexActionPost();
         $this->assertInstanceOf("Anax\Response\Response", $res);
         $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
-        // $res = $this->controller->indexActionPost();
-        // $this->assertInstanceOf("Anax\Response\Response", $res);
-        // $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
     }
 
     /**
@@ -96,9 +75,6 @@ class KrisWeatherControllerTest extends TestCase
         $this->di->get("request")->setPost("input", "Stockholm,SE");
         $res = $controller->indexActionPost();
         $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
-        // $this->di->get("request")->setPost("input", "Stockholm,SE");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
     }
 
     /**
@@ -114,9 +90,6 @@ class KrisWeatherControllerTest extends TestCase
         $this->di->get("request")->setPost("input", "194.47.150.2");
         $res = $controller->indexActionPost();
         $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
-        // $this->di->get("request")->setPost("input", "194.47.150.2");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
     }
 
     /**
@@ -132,9 +105,6 @@ class KrisWeatherControllerTest extends TestCase
         $this->di->get("request")->setPost("input", "Someplace that doesnt exist");
         $res = $controller->indexActionPost();
         $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
-        // $this->di->get("request")->setPost("input", "Someplace that doesnt exist");
-        // $res = $this->controller->indexActionPost();
-        // $this->assertInstanceOf("Anax\Response\ResponseUtility", $res);
     }
 
     /**
