@@ -1,0 +1,4 @@
+# .gitignore file for test stand-alone test compatability
+*
+# Ignore everything except this file
+!.gitignore

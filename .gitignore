@@ -3,4 +3,4 @@
 /vendor
 memory::
 composer.lock
-/config/api-keys
+/config/api-keys.php

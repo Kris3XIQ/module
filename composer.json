@@ -24,6 +24,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.4",
+        "anax/di": "^2.0.3",
         "anax/commons": "^2.0.14"
     },
     "require-dev": {
