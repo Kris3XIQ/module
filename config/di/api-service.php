@@ -8,7 +8,7 @@ return [
             "shared" => true,
             "active" => false,
             "callback" => function () {
-                $service = new \Anax\Service\APIService();
+                $service = new \Kris3XIQ\Service\APIService();
                 $service->setDi($this);
 
                 // Load configuration file(s)

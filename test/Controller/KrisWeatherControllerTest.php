@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\Controller;
+namespace Kris3XIQ\Weather;
 
 use Anax\Response\ResponseUtility;
 use Anax\DI\DIFactoryConfig;

@@ -2,14 +2,14 @@
     "name": "anax/weatherservice",
     "type": "library",
     "description": "Anax weather module.",
-    "keywords": ["weather", "kmom04", "education"],
-    "homepage": "http://www.student.bth.se/~krmr18/dbwebb-kurser/ramverk1/me/redovisa/htdocs/",
+    "keywords": ["OpenWeatherMap", "IPstack", "module", "kmom04"],
+    "homepage": "https://github.com/Kris3XIQ",
     "license": "MIT",
     "authors": [{
         "name": "Kristoffer Markow",
         "email": "kristoffer@markow.se",
-        "homepage": "http://www.student.bth.se/~krmr18/dbwebb-kurser/ramverk1/me/redovisa/htdocs/",
-        "role": "Developer"
+        "homepage": "https://github.com/Kris3XIQ",
+        "role": "Student"
     }],
     "support": {
         "issues": "https://github.com/canax/remserver/issues"
@@ -22,18 +22,14 @@
     },
     "minimum-stability": "beta",
     "prefer-stable": true,
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/Kris3XIQ/module"
-    }],
     "require": {
         "php": ">=7.4",
         "anax/commons": "^2.0.14"
     },
     "require-dev": {
-        "phpmetrics/phpmetrics": "^2",
-        "phpunit/phpunit": "^7",
         "anax/anax": "^2.0.17",
-        "anax/anax-ramverk1-me": "^1.0.0"
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "phpmetrics/phpmetrics": "^2",
+        "phpunit/phpunit": "^7"
     }
 }
