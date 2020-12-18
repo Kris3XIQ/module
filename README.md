@@ -5,11 +5,11 @@ Anax module for Weather service
 ## Installation
 ---
 ### Step 1
-Install using composer:
+Install using composer: 
 ` composer require kris3xiq/weatherservice `
 
 ### Step 2
-Be in the root of your ANAX installation and run:
+Be in the root of your ANAX installation and run: 
 ` bash vendor/kris3xiq/weatherservice/install.bash `
 
 ### Step 3
