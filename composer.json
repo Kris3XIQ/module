@@ -1,5 +1,5 @@
 {
-    "name": "anax/weatherservice",
+    "name": "kris3xiq/weatherservice",
     "type": "library",
     "description": "Anax weather module.",
     "keywords": ["OpenWeatherMap", "IPstack", "module", "kmom04"],
