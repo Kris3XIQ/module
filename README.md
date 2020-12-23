@@ -1,6 +1,7 @@
 Anax module for Weather service
 =========================
-
+## Badges
+[![Build Status](https://www.travis-ci.com/Kris3XIQ/module.svg?branch=main)](https://www.travis-ci.com/Kris3XIQ/module)
 
 ## Installation
 ---
