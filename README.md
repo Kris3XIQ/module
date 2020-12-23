@@ -1,8 +1,12 @@
 Anax module for Weather service
 =========================
 ## Badges
+Travis:
 [![Build Status](https://www.travis-ci.com/Kris3XIQ/module.svg?branch=main)](https://www.travis-ci.com/Kris3XIQ/module)
-
+Scrutinizer:
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Kris3XIQ/module/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/Kris3XIQ/module/?branch=main)  
+[![Build Status](https://scrutinizer-ci.com/g/Kris3XIQ/module/badges/build.png?b=main)](https://scrutinizer-ci.com/g/Kris3XIQ/module/build-status/main)  
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/Kris3XIQ/module/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
 ## Installation
 ---
 ### Step 1
