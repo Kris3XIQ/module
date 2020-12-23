@@ -21,6 +21,7 @@ env:
         - XDEBUG_MODE=coverage
 
 before_script:
+    - composer update
     - make install
 
 script:
