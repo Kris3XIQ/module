@@ -148,17 +148,17 @@ class KrisWeatherApiControllerTest extends TestCase
      * an invalid request via a third party application, such as
      * ARC or POSTMAN
      */
-    public function testWeatherApiInorrectInputThirdParty()
-    {
-        $controller = new KrisWeatherApiController();
-        $this->di->get("api-service");
-        $controller->setDI($this->di);
+    // public function testWeatherApiInorrectInputThirdParty()
+    // {
+    //     $controller = new KrisWeatherApiController();
+    //     $this->di->get("api-service");
+    //     $controller->setDI($this->di);
 
-        $this->di->get("request")->setPost("input", null);
-        $this->di->get("request")->setBody(json_decode(json_encode('{"input":"194.47.150.2"}')), true);
-        $res = $controller->indexActionPost();
-        $this->assertIsArray($res);
-    }
+    //     $this->di->get("request")->setPost("input", null);
+    //     $this->di->get("request")->setBody(json_decode(json_encode('{"input":"194.47.150.2"}')), true);
+    //     $res = $controller->indexActionPost();
+    //     $this->assertIsArray($res);
+    // }
 
     /**
      * Make sure we get back the correct result when sending
